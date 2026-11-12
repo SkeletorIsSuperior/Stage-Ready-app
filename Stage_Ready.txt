@@ -1,0 +1,62 @@
+import java.util.Scanner;
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+        //Inititialize user input.
+        Scanner input = new Scanner(System.in);
+        
+        //Ask for the number of actors and take the input
+        System.out.print("Enter number of actors: ");
+        int numActors = input.nextInt();
+        input.nextLine();
+        System.out.println();
+        //CharacterNames.Actors(actor);
+        //Make a count variable to start the for loop
+        int count = 0;
+       
+       
+       //This for loop uses count and asks user for the character name and if they are ready
+       for (int i = count; i < numActors; i++)
+       {
+            System.out.print("Enter actor or character name: ");
+            String charName = input.nextLine();
+            
+            System.out.println("");
+            System.out.println(charName);
+            System.out.println("");
+            
+            //Asks user if the Actor is ready.
+            System.out.print("Is Actor ready: ");
+            String ready = input.nextLine();
+            
+            
+           //If the actor is ready tell them to continue to the next actor.
+            if (ready.equals("Yes") || ready.equals("yes")){
+                System.out.println();
+                System.out.println("Okay, move on to the next Actor. Unless all are ready.");
+                System.out.println();
+                count+=1;
+            }
+            //If actor is not ready reask the question.
+            else if(ready.equals("No") || ready.equals("no")){
+                System.out.println("Please wait until they are ready and re-enter the name and put true");
+                System.out.print("Is Actor ready? ");
+                ready = input.nextLine();
+            }
+            //If the user does not enter yes or no have them redo question
+            else{
+                System.out.print("Not usable Input");
+                System.out.print("Is Actor ready? ");
+                ready = input.nextLine();
+            }
+            
+            
+        
+        }
+        //Tells the user that they can tell lights and sound they're ready
+        System.out.println("You may now tell Lights and sound that your side is ready, please wait for the other side to be ready");
+        
+    }
+    
+}
